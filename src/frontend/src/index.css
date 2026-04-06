@@ -1,0 +1,166 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: "Bricolage Grotesque";
+  src: url("/assets/fonts/BricolageGrotesque.woff2") format("woff2");
+  font-weight: 200 800;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Satoshi";
+  src: url("/assets/fonts/Satoshi.woff2") format("woff2");
+  font-weight: 300 700;
+  font-display: swap;
+}
+
+@layer base {
+  :root {
+    --radius: 0.875rem;
+
+    /* FStudioX dark theme - OKLCH values */
+    --background: 0.09 0.008 265;
+    --foreground: 0.98 0 0;
+    --card: 0.13 0.01 265;
+    --card-foreground: 0.98 0 0;
+    --popover: 0.15 0.012 265;
+    --popover-foreground: 0.98 0 0;
+    --primary: 0.51 0.22 27;
+    --primary-foreground: 0.98 0 0;
+    --secondary: 0.18 0.012 265;
+    --secondary-foreground: 0.98 0 0;
+    --muted: 0.16 0.01 265;
+    --muted-foreground: 0.62 0.02 265;
+    --accent: 0.51 0.22 27;
+    --accent-foreground: 0.98 0 0;
+    --destructive: 0.51 0.22 27;
+    --destructive-foreground: 0.98 0 0;
+    --border: 0.22 0.012 265;
+    --input: 0.22 0.012 265;
+    --ring: 0.51 0.22 27;
+    --chart-1: 0.51 0.22 27;
+    --chart-2: 0.6 0.118 184.704;
+    --chart-3: 0.769 0.188 70.08;
+    --chart-4: 0.627 0.265 303.9;
+    --chart-5: 0.696 0.17 162.48;
+    --sidebar: 0.11 0.009 265;
+    --sidebar-foreground: 0.98 0 0;
+    --sidebar-primary: 0.51 0.22 27;
+    --sidebar-primary-foreground: 0.98 0 0;
+    --sidebar-accent: 0.16 0.012 265;
+    --sidebar-accent-foreground: 0.98 0 0;
+    --sidebar-border: 0.22 0.012 265;
+    --sidebar-ring: 0.51 0.22 27;
+
+    /* FStudioX brand variables */
+    --fsx-bg-primary: #0b0b0f;
+    --fsx-bg-surface: #14151c;
+    --fsx-bg-elevated: #1f2230;
+    --fsx-border: #2a2d3a;
+    --fsx-accent: #e11d2e;
+    --fsx-accent-hover: #b81422;
+    --fsx-text-primary: #ffffff;
+    --fsx-text-secondary: #c9ceda;
+    --fsx-text-muted: #8b93a7;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: "Satoshi", "Inter", system-ui, sans-serif;
+    background-color: var(--fsx-bg-primary);
+    color: var(--fsx-text-primary);
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@layer utilities {
+  .fsx-surface {
+    background-color: var(--fsx-bg-surface);
+    border: 1px solid var(--fsx-border);
+  }
+
+  .fsx-elevated {
+    background-color: var(--fsx-bg-elevated);
+    border: 1px solid var(--fsx-border);
+  }
+
+  .fsx-btn-primary {
+    background-color: var(--fsx-accent);
+    color: white;
+    font-weight: 600;
+    padding: 12px 20px;
+    border-radius: 12px;
+    transition: background-color 0.2s, box-shadow 0.2s;
+  }
+
+  .fsx-btn-primary:hover {
+    background-color: var(--fsx-accent-hover);
+    box-shadow: 0 0 20px rgba(225, 29, 46, 0.35);
+  }
+
+  .fsx-btn-secondary {
+    background-color: var(--fsx-bg-elevated);
+    border: 1px solid var(--fsx-border);
+    color: white;
+    font-weight: 500;
+    padding: 12px 20px;
+    border-radius: 12px;
+    transition: background-color 0.2s;
+  }
+
+  .fsx-btn-secondary:hover {
+    background-color: #252840;
+  }
+
+  .fsx-glow-red {
+    box-shadow: 0 0 20px rgba(225, 29, 46, 0.25);
+  }
+
+  .fsx-heading {
+    font-family: "Bricolage Grotesque", "Inter", system-ui, sans-serif;
+    font-weight: 800;
+    color: var(--fsx-text-primary);
+  }
+
+  .text-accent-red {
+    color: var(--fsx-accent);
+  }
+
+  .border-fsx {
+    border-color: var(--fsx-border);
+  }
+
+  .bg-fsx-primary {
+    background-color: var(--fsx-bg-primary);
+  }
+
+  .bg-fsx-surface {
+    background-color: var(--fsx-bg-surface);
+  }
+
+  .bg-fsx-elevated {
+    background-color: var(--fsx-bg-elevated);
+  }
+
+  .text-fsx-secondary {
+    color: var(--fsx-text-secondary);
+  }
+
+  .text-fsx-muted {
+    color: var(--fsx-text-muted);
+  }
+
+  .sidebar-item-active {
+    background-color: rgba(225, 29, 46, 0.12);
+    border-left: 2px solid var(--fsx-accent);
+  }
+}
