@@ -4,12 +4,6 @@ import App from "./App";
 import { InternetIdentityProvider } from "./hooks/useInternetIdentity";
 import "./index.css";
 
-// PWA icon imports - ensures build pipeline includes these assets
-import icon192 from "/icon-192.png";
-import icon512 from "/icon-512.png";
-void icon192;
-void icon512;
-
 BigInt.prototype.toJSON = function () {
   return this.toString();
 };

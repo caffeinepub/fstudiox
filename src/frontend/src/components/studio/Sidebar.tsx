@@ -43,14 +43,13 @@ export default function Sidebar({
         className="flex items-center gap-3 px-3 lg:px-5 h-16 border-b shrink-0"
         style={{ borderColor: "var(--fsx-border)" }}
       >
-        <div
-          className="w-8 h-8 rounded-lg flex items-center justify-center text-white font-bold text-sm shrink-0"
-          style={{ backgroundColor: "var(--fsx-accent)" }}
-        >
-          F
-        </div>
+        <img
+          src="/assets/generated/fstudiox-logo-v2-192.dim_192x192.png"
+          alt="FStudioX Logo"
+          className="w-8 h-8 rounded-lg object-cover shrink-0"
+        />
         <span className="hidden lg:block font-heading font-bold text-lg text-white">
-          Studio<span style={{ color: "var(--fsx-accent)" }}>X</span>
+          FStudio<span style={{ color: "var(--fsx-accent)" }}>X</span>
         </span>
       </div>
 

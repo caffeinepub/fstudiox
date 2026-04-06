@@ -112,14 +112,13 @@ export default function Landing({ onNavigate }: LandingProps) {
         <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
           {/* Logo */}
           <div className="flex items-center gap-2">
-            <div
-              className="w-8 h-8 rounded-lg flex items-center justify-center text-white font-bold text-sm"
-              style={{ backgroundColor: "var(--fsx-accent)" }}
-            >
-              F
-            </div>
+            <img
+              src="/assets/generated/fstudiox-logo-v2-192.dim_192x192.png"
+              alt="FStudioX Logo"
+              className="w-9 h-9 rounded-lg object-cover"
+            />
             <span className="font-heading font-bold text-xl text-white">
-              Studio<span style={{ color: "var(--fsx-accent)" }}>X</span>
+              FStudio<span style={{ color: "var(--fsx-accent)" }}>X</span>
             </span>
           </div>
 
@@ -483,14 +482,13 @@ export default function Landing({ onNavigate }: LandingProps) {
         <div className="max-w-7xl mx-auto">
           <div className="flex flex-col md:flex-row items-center justify-between gap-6">
             <div className="flex items-center gap-2">
-              <div
-                className="w-7 h-7 rounded-lg flex items-center justify-center text-white font-bold text-xs"
-                style={{ backgroundColor: "var(--fsx-accent)" }}
-              >
-                F
-              </div>
+              <img
+                src="/assets/generated/fstudiox-logo-v2-192.dim_192x192.png"
+                alt="FStudioX Logo"
+                className="w-7 h-7 rounded-lg object-cover"
+              />
               <span className="font-heading font-bold text-lg text-white">
-                Studio<span style={{ color: "var(--fsx-accent)" }}>X</span>
+                FStudio<span style={{ color: "var(--fsx-accent)" }}>X</span>
               </span>
             </div>
 
