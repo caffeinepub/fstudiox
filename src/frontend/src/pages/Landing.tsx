@@ -113,7 +113,7 @@ export default function Landing({ onNavigate }: LandingProps) {
           {/* Logo */}
           <div className="flex items-center gap-2">
             <img
-              src="/assets/generated/fstudiox-logo-v2-192.dim_192x192.png"
+              src="/assets/generated/fstudiox-logo-v3-nav.dim_200x200.png"
               alt="FStudioX Logo"
               className="w-9 h-9 rounded-lg object-cover"
             />
@@ -483,7 +483,7 @@ export default function Landing({ onNavigate }: LandingProps) {
           <div className="flex flex-col md:flex-row items-center justify-between gap-6">
             <div className="flex items-center gap-2">
               <img
-                src="/assets/generated/fstudiox-logo-v2-192.dim_192x192.png"
+                src="/assets/generated/fstudiox-logo-v3-nav.dim_200x200.png"
                 alt="FStudioX Logo"
                 className="w-7 h-7 rounded-lg object-cover"
               />

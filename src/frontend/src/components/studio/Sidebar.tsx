@@ -44,7 +44,7 @@ export default function Sidebar({
         style={{ borderColor: "var(--fsx-border)" }}
       >
         <img
-          src="/assets/generated/fstudiox-logo-v2-192.dim_192x192.png"
+          src="/assets/generated/fstudiox-logo-v3-nav.dim_200x200.png"
           alt="FStudioX Logo"
           className="w-8 h-8 rounded-lg object-cover shrink-0"
         />
