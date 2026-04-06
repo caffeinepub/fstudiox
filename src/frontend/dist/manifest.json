@@ -1,10 +1,30 @@
 {
-  "name": "FStudioX",
-  "short_name": "FStudioX",
-  "description": "All-in-One Creative Studio",
-  "start_url": "/",
-  "display": "standalone",
   "background_color": "#0B0B0F",
-  "theme_color": "#E11D2E",
-  "orientation": "portrait-primary"
+  "description": "All-in-One Creative Studio",
+  "display": "standalone",
+  "icons": [
+    {
+      "purpose": "any",
+      "sizes": "192x192",
+      "src": "/assets/generated/fstudiox-icon-192x192.dim_192x192.png",
+      "type": "image/png"
+    },
+    {
+      "purpose": "any",
+      "sizes": "512x512",
+      "src": "/assets/generated/fstudiox-icon-512x512.dim_512x512.png",
+      "type": "image/png"
+    },
+    {
+      "purpose": "maskable",
+      "sizes": "512x512",
+      "src": "/assets/generated/fstudiox-icon-512x512.dim_512x512.png",
+      "type": "image/png"
+    }
+  ],
+  "name": "FStudioX",
+  "orientation": "portrait-primary",
+  "short_name": "FStudioX",
+  "start_url": "/",
+  "theme_color": "#E11D2E"
 }
