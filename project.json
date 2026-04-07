@@ -1,0 +1,27 @@
+{
+  "overview": "FStudioX is a professional all-in-one creative editing studio inspired by Instagram's Edits app. It features four fully-equipped editors — Photo, Video, Text, and Design — each with an Instagram-style split layout (preview on top, scrollable tools on bottom). The photo editor includes 10 filter presets plus 8 manual adjustment sliders. The video editor supports trim, speed control, and video filters. All editors share a consistent red/white/black branded interface.",
+  "features": [
+    "Instagram-style split layout: preview top, tools scrollable bottom",
+    "10 photo filter presets (Warm, Cool, B&W, Vintage, Clarendon, Juno, Lark, Fade, Vivid, Muted)",
+    "8 manual adjustment sliders: Brightness, Contrast, Saturation, Temperature, Tint, Blur, Sharpen, Exposure",
+    "Video trim, playback speed control, and video filter presets",
+    "Text editor with fonts, sizes, shadow/glow effects, outline, color",
+    "Design canvas with shapes, layers, fill/stroke colors",
+    "Download buttons in every editor (PNG, TXT)",
+    "Branded red/white/black theme with X/FS/Studio logo",
+    "PWA install support for home screen",
+    "Projects panel with Internet Identity authentication"
+  ],
+  "category": "creative-tools",
+  "tags": [
+    "photo-editing",
+    "video-editing",
+    "design",
+    "creative-studio",
+    "filters",
+    "effects",
+    "instagram-style",
+    "pwa"
+  ],
+  "last_updated": "2026-04-07T17:38:51.361Z"
+}

@@ -1,3 +1,4 @@
+import { createActor } from "@/backend";
 import {
   Dialog,
   DialogContent,
@@ -13,6 +14,8 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
+import { useActor } from "@caffeineai/core-infrastructure";
+import { useInternetIdentity } from "@caffeineai/core-infrastructure";
 import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
 import {
   Check,
@@ -26,8 +29,6 @@ import {
 } from "lucide-react";
 import { useState } from "react";
 import { toast } from "sonner";
-import { useActor } from "../../hooks/useActor";
-import { useInternetIdentity } from "../../hooks/useInternetIdentity";
 
 const PROJECT_TYPES = ["text", "image", "video", "design"];
 
@@ -48,7 +49,7 @@ interface ProjectWithId {
 }
 
 export default function ProjectsPanel() {
-  const { actor, isFetching: actorLoading } = useActor();
+  const { actor, isFetching: actorLoading } = useActor(createActor);
   const { identity, login, loginStatus } = useInternetIdentity();
   const queryClient = useQueryClient();
   const isLoggedIn = !!identity;
@@ -60,6 +61,11 @@ export default function ProjectsPanel() {
   const [renameValue, setRenameValue] = useState("");
 
   // Fetch projects
+  // Cast actor to any so we can call backend methods that may not yet be
+  // reflected in the generated bindings. All calls are guarded by !!actor.
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const anyActor = actor as any;
+
   const {
     data: projects = [],
     isLoading,
@@ -67,9 +73,9 @@ export default function ProjectsPanel() {
   } = useQuery<ProjectWithId[]>({
     queryKey: ["projects"],
     queryFn: async () => {
-      if (!actor) return [];
-      const raw = await actor.getProjects();
-      return raw.map((p, i) => ({ ...p, id: BigInt(i) }));
+      if (!anyActor) return [];
+      const raw = await anyActor.getProjects();
+      return (raw as ProjectWithId[]).map((p, i) => ({ ...p, id: BigInt(i) }));
     },
     enabled: !!actor && !actorLoading && isLoggedIn,
   });
@@ -77,8 +83,8 @@ export default function ProjectsPanel() {
   // Create project
   const createMutation = useMutation({
     mutationFn: async ({ title, type }: { title: string; type: string }) => {
-      if (!actor) throw new Error("Not connected");
-      return actor.createProject(title, type, "");
+      if (!anyActor) throw new Error("Not connected");
+      return anyActor.createProject(title, type, "");
     },
     onSuccess: () => {
       queryClient.invalidateQueries({ queryKey: ["projects"] });
@@ -93,8 +99,8 @@ export default function ProjectsPanel() {
   // Delete project
   const deleteMutation = useMutation({
     mutationFn: async (id: bigint) => {
-      if (!actor) throw new Error("Not connected");
-      return actor.deleteProject(id);
+      if (!anyActor) throw new Error("Not connected");
+      return anyActor.deleteProject(id);
     },
     onSuccess: () => {
       queryClient.invalidateQueries({ queryKey: ["projects"] });
@@ -106,8 +112,8 @@ export default function ProjectsPanel() {
   // Rename project
   const renameMutation = useMutation({
     mutationFn: async ({ id, title }: { id: bigint; title: string }) => {
-      if (!actor) throw new Error("Not connected");
-      return actor.updateProject(id, title, null);
+      if (!anyActor) throw new Error("Not connected");
+      return anyActor.updateProject(id, title, null);
     },
     onSuccess: () => {
       queryClient.invalidateQueries({ queryKey: ["projects"] });
